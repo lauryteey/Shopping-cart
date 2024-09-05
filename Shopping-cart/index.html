@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nettbutikk</title>
+    <link rel="stylesheet" href="Style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="nav container">
+
+            <a href="" class="logo">FreshCart</a>
+
+            <div class="search-bar">
+
+                <input type="text" placeholder="Søk.." id="searchInput">
+                <!-- search-ikon -->
+                <i class='bx bx-search-alt' id="search-ikon"></i>
+            </div>
+
+
+            <!-- bag-ikon -->
+            <div class="cart-container">
+
+                <i class='bx bxs-cart' style='color:#ffffff' id="bag-ikon" onclick="visHandlekurv()"></i>
+                <span class="item-count" id="item-count">0</span>
+
+            </div>
+
+            <!-- handlekurven -->
+            <div class="bag">
+
+                <div class="bag-tittel">Min handlekurv</div>
+
+
+                <!-- handlekurv innhold-->
+
+                <div class="handlekurv-innhold">
+
+                    <div id="handleListe">
+
+                    </div>
+
+                </div>
+
+                <div class="knapp-tilbake">
+                    <i class='bx bx-arrow-from-left' style='color:#050b33' onclick="tilbake()" id="knapp-tilbake"></i>
+
+                </div>
+
+                <div class="knapp-papirkurv">
+
+                    <i class='bx bxs-trash' style='color:rgba(244,51,51,0.9)' id="papirkurv" onclick="clearCart()">
+                    </i>
+
+                </div>
+
+                <div class="kurven">
+
+                    <div id="produkt1-info">
+
+                        <div class="produkt-info"></div>
+
+                    </div>
+                    <div id="produkt2-info">
+
+                        <div class="produkt-info"></div>
+
+                    </div>
+
+                    <div id="produkt3-info">
+
+                        <div class="produkt-info"></div>
+
+                    </div>
+
+                    <div id="produkt4-info">
+
+                        <div class="produkt-info"></div>
+
+                    </div>
+
+                    <div id="produkt5-info">
+
+                        <div class="produkt-info"></div>
+
+                    </div>
+
+                    <div id="produkt6-info">
+
+                        <div class="produkt-info"></div>
+
+                    </div>
+
+
+
+                </div>
+
+                <div class="style-sum">
+                    <div class="total-pris span">Total pris<span>0</span></div>
+                </div>
+
+                <div class="tømmHandlekurven" id="tømm-knapp">
+
+                </div>
+
+                <div class="checkOut-knapp">
+                    <button onclick="tilKassen()" id="kassen-knapp">Gå videre til kassen</button>
+                </div>
+
+            </div>
+
+    </header>
+
+    <content>
+
+        <div class="shop-container">
+
+            <h2 class="section-grønnsaker">Grønnsaker</h2>
+
+        </div>
+
+        <!-- Produkter -->
+
+        <div class="shop-content">
+
+            <!-- box 1 -->
+            <div class="produkt-boks" id="produkt-1">
+
+
+                <img src="../Bilder/Grønnsaker_section/løk_pærer_grønnsaker.jpg" class="produkt-img">
+
+
+
+                <div class="pris-og-handlekurvKnapp">
+
+                    <p class="produkt-tittel">Gul løk</p>
+
+
+                    <i class='bx bx-cart-add' style='color:#e25303' id="handlekurv-knapp"
+                        onclick="leggtilProdukt('produkt-1')"></i>
+
+                </div>
+
+
+                <span class="produkt-prise">kr 4,78/1kg</span>
+
+            </div>
+
+            <!-- box 2 -->
+            <div class="produkt-boks" id="produkt-2">
+
+                <img src="../Bilder/Grønnsaker_section/potet_grønnsaker2.png" alt="" class="produkt-img">
+
+
+
+                <div class="pris-og-handlekurvKnapp">
+
+
+                    <p class="produkt-tittel">Potet</p>
+                    <i class='bx bx-cart-add' style='color:#e25303' id="handlekurv-knapp"
+                        onclick="leggtilProdukt('produkt-2')"></i>
+
+                </div>
+
+                <span class="produkt-prise"> kr 16,10/1stk</span>
+
+            </div>
+
+            <!-- box 3 -->
+            <div class="produkt-boks" id="produkt-3">
+
+                <img src="../Bilder/Grønnsaker_section/japansk_løk_grønnsaker.png" alt="" class="produkt-img">
+
+
+
+                <div class="pris-og-handlekurvKnapp">
+
+                    <p class="produkt-tittel">vårløk</p>
+
+                    <i class='bx bx-cart-add' style='color:#e25303' id="handlekurv-knapp"
+                        onclick="leggtilProdukt('produkt-3')"></i>
+
+                </div>
+
+
+                <span class="produkt-prise">kr 22,90/150g</span>
+
+            </div>
+        </div>
+
+        <div class="shop-content-rad2">
+
+            <!-- box 4 -->
+            <div class="produkt-boks" id="produkt-4">
+
+                <img src="../Bilder/Grønnsaker_section/agurk_grønnsaker.png" alt="" class="produkt-img">
+
+
+
+                <div class="pris-og-handlekurvKnapp">
+
+                    <p class="produkt-tittel"> Agurk</p>
+
+                    <i class='bx bx-cart-add' style='color:#e25303' id="handlekurv-knapp"
+                        onclick="leggtilProdukt('produkt-4')"></i>
+
+                </div>
+
+                <span class="produkt-prise">kr 32,90/1stk</span>
+
+            </div>
+
+            <!-- box 5 -->
+            <div class="produkt-boks" id="produkt-5">
+
+                <img src="../Bilder/Grønnsaker_section/Brokkoli_grønnsaker.jpg" alt="" class="produkt-img">
+
+
+
+                <div class="pris-og-handlekurvKnapp">
+
+                    <p class="produkt-tittel">Brokkoli</p>
+
+                    <i class='bx bx-cart-add' style='color:#e25303' id="handlekurv-knapp"
+                        onclick="leggtilProdukt('produkt-5')"></i>
+
+                </div>
+
+                <span class="produkt-prise">kr 22,90/1stk</span>
+
+            </div>
+
+            <!-- box 6 -->
+            <div class="produkt-boks" id="produkt-6">
+
+                <img src="../Bilder/Grønnsaker_section/Hvitløk_grønnsaker(edit2).jpg" alt="" class="produkt-img">
+
+
+
+                <div class="pris-og-handlekurvKnapp">
+
+                    <p class="produkt-tittel">Hvitløk</p>
+
+                    <i class='bx bx-cart-add' style='color:#e25303' id="handlekurv-knapp"
+                        onclick="leggtilProdukt('produkt-6')"></i>
+
+                </div>
+
+                <span class="produkt-prise">kr 18,60/100g </span>
+
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <p class="footer-text">2024 FreshCart</p>
+        </div>
+        <script src="script.js"></script>
+
+    </content>
+
+
+</body>
+
+</html>
